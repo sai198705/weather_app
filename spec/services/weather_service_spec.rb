@@ -25,10 +25,10 @@ RSpec.describe WeatherService, type: :service do
     end
     let(:weather_data) do 
       {
-        temperature: 30, 
-        high: 35,
-        low: 25,
-        description: 'Clear sky' 
+        temperature: 12.56, 
+        high: 14.12,
+        low: 11.5,
+        description: 'mist' 
       }
     end
 
