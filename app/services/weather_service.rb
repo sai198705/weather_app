@@ -12,10 +12,10 @@ class WeatherService
 
     if response.success?
       {
-        temperature: response['main']['temp'],
-        high: response['main']['temp_max'],
-        low: response['main']['temp_min'],
-        description: response['weather'].first['description']
+        temperature: response.parsed_response['main']['temp'],
+        high: response.parsed_response['main']['temp_max'],
+        low: response.parsed_response['main']['temp_min'],
+        description: response.parsed_response['weather'].first['description']
       }
     else
       nil
