@@ -1,0 +1,32 @@
+<div class='bd-content'>
+<%# Flash message for errors %>
+<% if flash[:error] %>
+  <div class="alert alert-danger">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
+<%# Form to submit the address for weather information %>
+<%= form_with url: weathers_path, method: :get, class:'form' do |form| %>
+  <div class="mb-3">
+    <%= form.label :address, "Enter Address", class: 'form-label' %>
+    <%= form.text_field :address, value: @address, class: "form-control-sm", placeholder: "Enter city or address" %>
+  </div>
+  <div class="mb-3 form-group">
+    <%= form.submit "Get Weather", class: "btn btn-primary" %>
+    <%= link_to "Clear", weathers_path , class: "btn btn-warning" %>
+  </div>
+<% end %>
+
+<%# Display weather data if available %>
+<% if @weather_data %>
+  <div class="weather-info">
+    <h3>Weather for <%= @address %></h3>
+    <p><strong>Temperature:</strong> <%= @weather_data[:temperature] %> °C</p>
+    <p><strong>High:</strong> <%= @weather_data[:high] %> °C</p>
+    <p><strong>Low:</strong> <%= @weather_data[:low] %> °C</p>
+    <p><strong>Description:</strong> <%= @weather_data[:description] %></p>
+  </div>
+<% end %>
+</div>
+
