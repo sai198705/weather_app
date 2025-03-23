@@ -5,20 +5,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 3.1.4
+
+* Rails version - 7.1.4
+
+* Bootstrap Version - 5.x
 
 * System dependencies
 
 * Configuration
 
-* Database creation
-
-* Database initialization
-
 * How to run the test suite
+  `bundle exec rspec`
 
 * Services (job queues, cache servers, search engines, etc.)
+	* Added one service file to fetch weather details from OpenWeatherMap
 
-* Deployment instructions
 
-* ...
